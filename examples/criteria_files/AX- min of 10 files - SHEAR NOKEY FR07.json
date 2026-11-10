@@ -1,0 +1,1687 @@
+{
+ "format": "abaqus-section-criteria",
+ "version": 1,
+ "name": "AX- min of 10 files - SHEAR NOKEY FR07",
+ "final": false,
+ "created": "2026-11-10 09:25:10",
+ "modified": "2026-11-10 09:25:10",
+ "units": "mm, kN",
+ "database": "0_INPUT/Abaqus_databases/Panel_results more NOKEY cases",
+ "group": {
+  "name": "SHEAR NOKEY FR07",
+  "filter": "SHEAR_NOKEY_S_FR07"
+ },
+ "mechanism": {
+  "key": "AX-",
+  "name": "AX- crushing / compression (toe)",
+  "section_a": "V_SPEC&GM&2&0",
+  "section_b": "V_PIER&RU&1&0",
+  "component": "Uz",
+  "sense": "-",
+  "relative_to_start": true,
+  "thresholds": {
+   "DS1": -1.0,
+   "DS2": -1.414,
+   "DS3": -2.0,
+   "DS4": -3.0,
+   "DS5": -4.6
+  },
+  "provisional": [
+   "DS1",
+   "DS2",
+   "DS3",
+   "DS4",
+   "DS5"
+  ],
+  "locations": [
+   {
+    "label": "RU1 - SPEC GPL2 (Uz)",
+    "section_a": "V_SPEC&GPL&2&0",
+    "section_b": "V_PIER&RU&1&0",
+    "component": "Uz"
+   },
+   {
+    "label": "SPEC GPL2 - RU1 (toe, panel top)",
+    "section_a": "V_PIER&RU&1&0",
+    "section_b": "V_SPEC&GPL&2&0",
+    "component": "Uz"
+   },
+   {
+    "label": "SPEC GM2 - RU1 (heel, panel top)",
+    "section_a": "V_PIER&RU&1&0",
+    "section_b": "V_SPEC&GM&2&0",
+    "component": "Uz"
+   },
+   {
+    "label": "SPEC DPL2 - RU1 (toe, bottom slice)",
+    "section_a": "V_PIER&RU&1&0",
+    "section_b": "V_SPEC&DPL&2&0",
+    "component": "Uz"
+   }
+  ],
+  "etabs": {
+   "property_pattern": "^AX|AXIAL",
+   "components": [
+    "U1"
+   ],
+   "sense": "-",
+   "side": "Min",
+   "project_link_types": [
+    "Axial_X_dir",
+    "Axial_Y_dir"
+   ]
+  },
+  "location": "custom"
+ },
+ "pushover": {
+  "drift": "{V_PIER&RU&2&0:Ux} - {V_PIER&RU&1&0:Ux}",
+  "force": "{V_PIER&RU&1&0:Fx} / 1000",
+  "drift_label": "Drift RU2 - RU1 [mm]",
+  "force_label": "Force RU1 Fx [kN]",
+  "H_mm": 2600.0,
+  "collapse_jump_mm": 5.0,
+  "collapse_jump_ratio": 10.0,
+  "collapse_probe": "{V_PIER&RU&2&0:Uz} - {V_PIER&RU&1&0:Uz}"
+ },
+ "defaults_file": "1_Abaqus_criteria/defaults/default_mechanisms.json",
+ "explanation": "Per job: DS1 ... DS5 = drift where the state starts [mm] and the displacement of section B relative to section A at that drift [mm] (the threshold). source: default = default threshold, disp / drift = typed by the user, none = not defined. Damage states are starts: DSk when value > threshold.",
+ "rows": [
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_34272",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 34272,
+   "axial_kN": 34.272,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": 0.1369731627553981,
+     "drift": 0.7688385292658312,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": 0.18953226874207849,
+     "drift": 1.0467300573718483,
+     "status": ""
+    },
+    "DS3": {
+     "source": "drift",
+     "disp": 0.21750870495090552,
+     "drift": 1.4408781019597532,
+     "status": ""
+    },
+    "DS4": {
+     "source": "drift",
+     "disp": 0.1364009068819698,
+     "drift": 3.7293486430527656,
+     "status": ""
+    },
+    "DS5": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    }
+   },
+   "note": "n 3/3/3/1/-",
+   "end_drift": 30.0000887806073,
+   "value_at_zero_drift": -0.0
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_68874",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 68874,
+   "axial_kN": 68.874,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": 0.3623021391494745,
+     "drift": 1.665444257424229,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": 1.0547259939168165,
+     "drift": 4.002995027704922,
+     "status": ""
+    },
+    "DS3": {
+     "source": "drift",
+     "disp": 2.2555950518353565,
+     "drift": 8.039051371986087,
+     "status": ""
+    },
+    "DS4": {
+     "source": "drift",
+     "disp": 3.8681523619942504,
+     "drift": 15.614798797346122,
+     "status": ""
+    },
+    "DS5": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    }
+   },
+   "note": "n 6/5/3/1/-",
+   "end_drift": 30.000085376028,
+   "value_at_zero_drift": -0.0
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_103485",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 103485,
+   "axial_kN": 103.485,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": 0.3754078507037664,
+     "drift": 1.8487437349964266,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": 1.167717888992917,
+     "drift": 4.565133712559683,
+     "status": ""
+    },
+    "DS3": {
+     "source": "drift",
+     "disp": 3.0293333344121196,
+     "drift": 10.76951218538871,
+     "status": ""
+    },
+    "DS4": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    },
+    "DS5": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    }
+   },
+   "note": "n 4/4/3/-/-",
+   "end_drift": 29.9999779041227,
+   "value_at_zero_drift": -0.0
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_138087",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 138087,
+   "axial_kN": 138.087,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": 0.4003198514451699,
+     "drift": 2.0732820363848705,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": 1.1445304810661023,
+     "drift": 4.720359759326199,
+     "status": ""
+    },
+    "DS3": {
+     "source": "drift",
+     "disp": 2.87409178906136,
+     "drift": 10.635949947775352,
+     "status": ""
+    },
+    "DS4": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    },
+    "DS5": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    }
+   },
+   "note": "n 4/4/3/-/-",
+   "end_drift": 29.9999690217826,
+   "value_at_zero_drift": -0.0
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_172699",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 172699,
+   "axial_kN": 172.699,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": 0.4634681959687649,
+     "drift": 2.4332821283554984,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": 1.1382641866967005,
+     "drift": 4.908908442805846,
+     "status": ""
+    },
+    "DS3": {
+     "source": "drift",
+     "disp": 2.9507877286101265,
+     "drift": 11.174121763090062,
+     "status": ""
+    },
+    "DS4": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    },
+    "DS5": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    }
+   },
+   "note": "n 6/6/5/-/-",
+   "end_drift": 30.0000855407397,
+   "value_at_zero_drift": -0.0
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_207301",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 207301,
+   "axial_kN": 207.301,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": 0.46231298938065274,
+     "drift": 2.572490808175138,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": 1.186822250470792,
+     "drift": 5.2875483499734415,
+     "status": ""
+    },
+    "DS3": {
+     "source": "drift",
+     "disp": 2.806855923178104,
+     "drift": 11.036484631462926,
+     "status": ""
+    },
+    "DS4": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    },
+    "DS5": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    }
+   },
+   "note": "n 4/4/3/-/-",
+   "end_drift": 30.0003219763921,
+   "value_at_zero_drift": -0.0
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_241913",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 241913,
+   "axial_kN": 241.913,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": 0.4586788874490578,
+     "drift": 2.721448029452563,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": 1.103577416825517,
+     "drift": 5.236697568286318,
+     "status": ""
+    },
+    "DS3": {
+     "source": "drift",
+     "disp": 2.7301017464096073,
+     "drift": 11.138982997509846,
+     "status": ""
+    },
+    "DS4": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    },
+    "DS5": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    }
+   },
+   "note": "n 4/4/3/-/-",
+   "end_drift": 30.0000027722028,
+   "value_at_zero_drift": -0.0
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_276515",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 276515,
+   "axial_kN": 276.515,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": 0.4560246510707592,
+     "drift": 2.857702425330355,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": 1.2919312533174558,
+     "drift": 6.108378695346626,
+     "status": ""
+    },
+    "DS3": {
+     "source": "drift",
+     "disp": 2.8618460396863967,
+     "drift": 11.877275348154727,
+     "status": ""
+    },
+    "DS4": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    },
+    "DS5": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    }
+   },
+   "note": "n 4/3/3/-/-",
+   "end_drift": 30.0004003496549,
+   "value_at_zero_drift": -0.0
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_311126",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 311126,
+   "axial_kN": 311.126,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": 0.4510822409882048,
+     "drift": 2.962565836494732,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": 1.3872602806619667,
+     "drift": 6.68612911606942,
+     "status": ""
+    },
+    "DS3": {
+     "source": "drift",
+     "disp": 2.9222549376904676,
+     "drift": 12.43712478818889,
+     "status": ""
+    },
+    "DS4": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    },
+    "DS5": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    }
+   },
+   "note": "n 4/3/3/-/-",
+   "end_drift": 30.0001545733094,
+   "value_at_zero_drift": -0.0
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_360000",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 360000,
+   "axial_kN": 360.0,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": 0.4392164365428792,
+     "drift": 3.1758874895615734,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": 1.1514483173454437,
+     "drift": 6.22174560823108,
+     "status": ""
+    },
+    "DS3": {
+     "source": "drift",
+     "disp": 3.0247868078052504,
+     "drift": 13.302075538850989,
+     "status": ""
+    },
+    "DS4": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    },
+    "DS5": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    }
+   },
+   "note": "n 6/5/4/-/-",
+   "end_drift": 20.0005332321703,
+   "value_at_zero_drift": -0.0
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_720000",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 720000,
+   "axial_kN": 720.0,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": 0.14871344922111973,
+     "drift": 5.065599345465941,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": 0.7387073626379902,
+     "drift": 8.58266327236707,
+     "status": ""
+    },
+    "DS3": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    },
+    "DS4": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    },
+    "DS5": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    }
+   },
+   "note": "n 5/3/-/-/-",
+   "end_drift": 20.0004602417046,
+   "value_at_zero_drift": -0.0
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_1080000",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 1080000,
+   "axial_kN": 1080.0,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": -0.5616570256012375,
+     "drift": 7.60275898372993,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": -0.07796295756969768,
+     "drift": 14.855618689076696,
+     "status": ""
+    },
+    "DS3": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    },
+    "DS4": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    },
+    "DS5": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    }
+   },
+   "note": "n 6/3/-/-/-",
+   "end_drift": 19.9981585491496,
+   "value_at_zero_drift": -0.0
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_1440000",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 1440000,
+   "axial_kN": 1440.0,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": -0.8530705145584223,
+     "drift": 4.970226251593538,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": -1.0357456334690294,
+     "drift": 6.85393957679752,
+     "status": ""
+    },
+    "DS3": {
+     "source": "drift",
+     "disp": -1.1417415193384737,
+     "drift": 9.548991744239718,
+     "status": ""
+    },
+    "DS4": {
+     "source": "drift",
+     "disp": -2.9485715436401128,
+     "drift": 16.952483280758045,
+     "status": ""
+    },
+    "DS5": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    }
+   },
+   "note": "n 4/4/4/2/-",
+   "end_drift": 17.2009112862997,
+   "value_at_zero_drift": -0.0
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_1800000",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 1800000,
+   "axial_kN": 1800.0,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": -0.9228367285859769,
+     "drift": 4.354391577325869,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": -1.1289793323221473,
+     "drift": 5.3899776912028186,
+     "status": ""
+    },
+    "DS3": {
+     "source": "drift",
+     "disp": -1.9379698228617683,
+     "drift": 11.356249436007982,
+     "status": ""
+    },
+    "DS4": {
+     "source": "drift",
+     "disp": -2.9557774243068997,
+     "drift": 13.110638674816668,
+     "status": ""
+    },
+    "DS5": {
+     "source": "drift",
+     "disp": -4.578573502163138,
+     "drift": 13.68678827165979,
+     "status": ""
+    }
+   },
+   "note": "n 4/4/2/2/2",
+   "end_drift": 13.9809175480038,
+   "value_at_zero_drift": -0.0
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_2160000",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 2160000,
+   "axial_kN": 2160.0,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": -0.9424148922073845,
+     "drift": 3.8603558745420403,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": -1.3514059730490178,
+     "drift": 5.353719475850643,
+     "status": ""
+    },
+    "DS3": {
+     "source": "drift",
+     "disp": -1.9337676682286857,
+     "drift": 7.670739415621323,
+     "status": ""
+    },
+    "DS4": {
+     "source": "drift",
+     "disp": -2.944235481405606,
+     "drift": 9.90696243442562,
+     "status": ""
+    },
+    "DS5": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    }
+   },
+   "note": "n 4/2/2/2/-",
+   "end_drift": 10.0077787412029,
+   "value_at_zero_drift": -0.0
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_2520000",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 2520000,
+   "axial_kN": 2520.0,
+   "DS": {
+    "DS1": {
+     "source": "drift",
+     "disp": -0.8302600689702351,
+     "drift": 3.190384975701388,
+     "status": ""
+    },
+    "DS2": {
+     "source": "drift",
+     "disp": -1.3614279526732316,
+     "drift": 4.180679357300977,
+     "status": ""
+    },
+    "DS3": {
+     "source": "drift",
+     "disp": -1.940399568962172,
+     "drift": 6.181807182675686,
+     "status": ""
+    },
+    "DS4": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    },
+    "DS5": {
+     "source": "none",
+     "disp": null,
+     "drift": null,
+     "status": ""
+    }
+   },
+   "note": "n 4/2/2/-/-",
+   "end_drift": 7.62478431949989,
+   "value_at_zero_drift": -0.0
+  }
+ ],
+ "notes": "min of 10 criteria files (Compare tab); definition and jobs from 'AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07'. Row note: n = files where DS1/DS2/DS3/DS4/DS5 start.",
+ "summary": {
+  "DS1": {
+   "thresholds_mm": -1.0,
+   "start_drift_mm_by_axial_kN": {
+    "34 SHEAR_NOKEY_S_FR07_EX": 0.7688385292658312,
+    "69 SHEAR_NOKEY_S_FR07_EX": 1.665444257424229,
+    "103 SHEAR_NOKEY_S_FR07_EX": 1.8487437349964266,
+    "138 SHEAR_NOKEY_S_FR07_EX": 2.0732820363848705,
+    "173 SHEAR_NOKEY_S_FR07_EX": 2.4332821283554984,
+    "207 SHEAR_NOKEY_S_FR07_EX": 2.572490808175138,
+    "242 SHEAR_NOKEY_S_FR07_EX": 2.721448029452563,
+    "277 SHEAR_NOKEY_S_FR07_EX": 2.857702425330355,
+    "311 SHEAR_NOKEY_S_FR07_EX": 2.962565836494732,
+    "360 SHEAR_NOKEY_S_FR07_EX": 3.1758874895615734,
+    "720 SHEAR_NOKEY_S_FR07_EX": 5.065599345465941,
+    "1080 SHEAR_NOKEY_S_FR07_EX": 7.60275898372993,
+    "1440 SHEAR_NOKEY_S_FR07_EX": 4.970226251593538,
+    "1800 SHEAR_NOKEY_S_FR07_EX": 4.354391577325869,
+    "2160 SHEAR_NOKEY_S_FR07_EX": 3.8603558745420403,
+    "2520 SHEAR_NOKEY_S_FR07_EX": 3.190384975701388
+   }
+  },
+  "DS2": {
+   "thresholds_mm": -1.414,
+   "start_drift_mm_by_axial_kN": {
+    "34 SHEAR_NOKEY_S_FR07_EX": 1.0467300573718483,
+    "69 SHEAR_NOKEY_S_FR07_EX": 4.002995027704922,
+    "103 SHEAR_NOKEY_S_FR07_EX": 4.565133712559683,
+    "138 SHEAR_NOKEY_S_FR07_EX": 4.720359759326199,
+    "173 SHEAR_NOKEY_S_FR07_EX": 4.908908442805846,
+    "207 SHEAR_NOKEY_S_FR07_EX": 5.2875483499734415,
+    "242 SHEAR_NOKEY_S_FR07_EX": 5.236697568286318,
+    "277 SHEAR_NOKEY_S_FR07_EX": 6.108378695346626,
+    "311 SHEAR_NOKEY_S_FR07_EX": 6.68612911606942,
+    "360 SHEAR_NOKEY_S_FR07_EX": 6.22174560823108,
+    "720 SHEAR_NOKEY_S_FR07_EX": 8.58266327236707,
+    "1080 SHEAR_NOKEY_S_FR07_EX": 14.855618689076696,
+    "1440 SHEAR_NOKEY_S_FR07_EX": 6.85393957679752,
+    "1800 SHEAR_NOKEY_S_FR07_EX": 5.3899776912028186,
+    "2160 SHEAR_NOKEY_S_FR07_EX": 5.353719475850643,
+    "2520 SHEAR_NOKEY_S_FR07_EX": 4.180679357300977
+   }
+  },
+  "DS3": {
+   "thresholds_mm": -2.0,
+   "start_drift_mm_by_axial_kN": {
+    "34 SHEAR_NOKEY_S_FR07_EX": 1.4408781019597532,
+    "69 SHEAR_NOKEY_S_FR07_EX": 8.039051371986087,
+    "103 SHEAR_NOKEY_S_FR07_EX": 10.76951218538871,
+    "138 SHEAR_NOKEY_S_FR07_EX": 10.635949947775352,
+    "173 SHEAR_NOKEY_S_FR07_EX": 11.174121763090062,
+    "207 SHEAR_NOKEY_S_FR07_EX": 11.036484631462926,
+    "242 SHEAR_NOKEY_S_FR07_EX": 11.138982997509846,
+    "277 SHEAR_NOKEY_S_FR07_EX": 11.877275348154727,
+    "311 SHEAR_NOKEY_S_FR07_EX": 12.43712478818889,
+    "360 SHEAR_NOKEY_S_FR07_EX": 13.302075538850989,
+    "720 SHEAR_NOKEY_S_FR07_EX": null,
+    "1080 SHEAR_NOKEY_S_FR07_EX": null,
+    "1440 SHEAR_NOKEY_S_FR07_EX": 9.548991744239718,
+    "1800 SHEAR_NOKEY_S_FR07_EX": 11.356249436007982,
+    "2160 SHEAR_NOKEY_S_FR07_EX": 7.670739415621323,
+    "2520 SHEAR_NOKEY_S_FR07_EX": 6.181807182675686
+   }
+  },
+  "DS4": {
+   "thresholds_mm": -3.0,
+   "start_drift_mm_by_axial_kN": {
+    "34 SHEAR_NOKEY_S_FR07_EX": 3.7293486430527656,
+    "69 SHEAR_NOKEY_S_FR07_EX": 15.614798797346122,
+    "103 SHEAR_NOKEY_S_FR07_EX": null,
+    "138 SHEAR_NOKEY_S_FR07_EX": null,
+    "173 SHEAR_NOKEY_S_FR07_EX": null,
+    "207 SHEAR_NOKEY_S_FR07_EX": null,
+    "242 SHEAR_NOKEY_S_FR07_EX": null,
+    "277 SHEAR_NOKEY_S_FR07_EX": null,
+    "311 SHEAR_NOKEY_S_FR07_EX": null,
+    "360 SHEAR_NOKEY_S_FR07_EX": null,
+    "720 SHEAR_NOKEY_S_FR07_EX": null,
+    "1080 SHEAR_NOKEY_S_FR07_EX": null,
+    "1440 SHEAR_NOKEY_S_FR07_EX": 16.952483280758045,
+    "1800 SHEAR_NOKEY_S_FR07_EX": 13.110638674816668,
+    "2160 SHEAR_NOKEY_S_FR07_EX": 9.90696243442562,
+    "2520 SHEAR_NOKEY_S_FR07_EX": null
+   }
+  },
+  "DS5": {
+   "thresholds_mm": -4.6,
+   "start_drift_mm_by_axial_kN": {
+    "34 SHEAR_NOKEY_S_FR07_EX": null,
+    "69 SHEAR_NOKEY_S_FR07_EX": null,
+    "103 SHEAR_NOKEY_S_FR07_EX": null,
+    "138 SHEAR_NOKEY_S_FR07_EX": null,
+    "173 SHEAR_NOKEY_S_FR07_EX": null,
+    "207 SHEAR_NOKEY_S_FR07_EX": null,
+    "242 SHEAR_NOKEY_S_FR07_EX": null,
+    "277 SHEAR_NOKEY_S_FR07_EX": null,
+    "311 SHEAR_NOKEY_S_FR07_EX": null,
+    "360 SHEAR_NOKEY_S_FR07_EX": null,
+    "720 SHEAR_NOKEY_S_FR07_EX": null,
+    "1080 SHEAR_NOKEY_S_FR07_EX": null,
+    "1440 SHEAR_NOKEY_S_FR07_EX": null,
+    "1800 SHEAR_NOKEY_S_FR07_EX": 13.68678827165979,
+    "2160 SHEAR_NOKEY_S_FR07_EX": null,
+    "2520 SHEAR_NOKEY_S_FR07_EX": null
+   }
+  }
+ },
+ "statistics": {
+  "value": "min",
+  "statistic": "min",
+  "k_sigma": 0,
+  "method": "per damage state and axial load: the start drifts of the files where the state starts (never-reached states left out); sigma = sample standard deviation (n - 1), taken as 0 for one file; a value below 0 is set to 0; min_files / max_files = files with that drift",
+  "files": [
+   "AX+ SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE",
+   "AX+ SPEC GM2 vs RU1 Uz - SHEAR KEY TIE",
+   "AX- SPEC GM2 vs RU1 Uz - SHEAR KEY TIE",
+   "AX- SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE",
+   "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07",
+   "AX- SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07",
+   "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07",
+   "AX+ SPEC DM1 vs RU1 Uz - SHEAR NOKEY FR07",
+   "AX+ SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07",
+   "AX+ SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+  ],
+  "definition_from": "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07",
+  "by_axial_kN": {
+   "34": {
+    "DS1": {
+     "n": 3,
+     "mean": 1.9828686168510037,
+     "sigma": 1.0515992074948755,
+     "min": 0.7688385292658312,
+     "max": 2.6113103503623383,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "value": 0.7688385292658312,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 3,
+     "mean": 4.189866904255017,
+     "sigma": 2.722167023457234,
+     "min": 1.0467300573718483,
+     "max": 5.788106940359135,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "value": 1.0467300573718483,
+     "clipped": false
+    },
+    "DS3": {
+     "n": 3,
+     "mean": 10.459175969625665,
+     "sigma": 7.810120572129983,
+     "min": 1.4408781019597532,
+     "max": 14.99499002575976,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "value": 1.4408781019597532,
+     "clipped": false
+    },
+    "DS4": {
+     "n": 1,
+     "mean": 3.7293486430527656,
+     "sigma": null,
+     "min": 3.7293486430527656,
+     "max": 3.7293486430527656,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "value": 3.7293486430527656,
+     "clipped": false
+    }
+   },
+   "69": {
+    "DS1": {
+     "n": 6,
+     "mean": 3.120524329796421,
+     "sigma": 1.923448931384086,
+     "min": 1.665444257424229,
+     "max": 6.92437529041458,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 1.665444257424229,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 5,
+     "mean": 5.560783929605833,
+     "sigma": 0.9047086566953478,
+     "min": 4.002995027704922,
+     "max": 6.18056071124606,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "value": 4.002995027704922,
+     "clipped": false
+    },
+    "DS3": {
+     "n": 3,
+     "mean": 13.048457080112575,
+     "sigma": 4.338373635552663,
+     "min": 8.039051371986087,
+     "max": 15.582768044563725,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "value": 8.039051371986087,
+     "clipped": false
+    },
+    "DS4": {
+     "n": 1,
+     "mean": 15.614798797346122,
+     "sigma": null,
+     "min": 15.614798797346122,
+     "max": 15.614798797346122,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "value": 15.614798797346122,
+     "clipped": false
+    }
+   },
+   "103": {
+    "DS1": {
+     "n": 4,
+     "mean": 3.6604841538444948,
+     "sigma": 2.904176638186748,
+     "min": 1.8487437349964266,
+     "max": 7.989581168184753,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 1.8487437349964266,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 4,
+     "mean": 9.08471360218255,
+     "sigma": 7.1255262898699705,
+     "min": 4.565133712559683,
+     "max": 19.718171741978722,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 4.565133712559683,
+     "clipped": false
+    },
+    "DS3": {
+     "n": 3,
+     "mean": 14.970883388729845,
+     "sigma": 3.6564246948510126,
+     "min": 10.76951218538871,
+     "max": 17.433233970621345,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 10.76951218538871,
+     "clipped": false
+    }
+   },
+   "138": {
+    "DS1": {
+     "n": 4,
+     "mean": 4.083154702312856,
+     "sigma": 3.327411809331412,
+     "min": 2.0732820363848705,
+     "max": 9.047031264336352,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 2.0732820363848705,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 4,
+     "mean": 9.756623508293588,
+     "sigma": 7.950763183406371,
+     "min": 4.720359759326199,
+     "max": 21.62124719848742,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 4.720359759326199,
+     "clipped": false
+    },
+    "DS3": {
+     "n": 3,
+     "mean": 15.459358630700487,
+     "sigma": 4.1995267565572325,
+     "min": 10.635949947775352,
+     "max": 18.303580587008877,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 10.635949947775352,
+     "clipped": false
+    }
+   },
+   "173": {
+    "DS1": {
+     "n": 6,
+     "mean": 4.330414957149652,
+     "sigma": 2.9336648629486093,
+     "min": 2.4332821283554984,
+     "max": 10.174458584221014,
+     "min_files": [
+      "AX+ SPEC DM1 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 2.4332821283554984,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 6,
+     "mean": 9.518128254334174,
+     "sigma": 7.161999703194021,
+     "min": 4.908908442805846,
+     "max": 24.00531496792393,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 4.908908442805846,
+     "clipped": false
+    },
+    "DS3": {
+     "n": 5,
+     "mean": 16.53864344349222,
+     "sigma": 3.058742028674034,
+     "min": 11.174121763090062,
+     "max": 18.883161918162973,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 11.174121763090062,
+     "clipped": false
+    }
+   },
+   "207": {
+    "DS1": {
+     "n": 4,
+     "mean": 5.043423177979131,
+     "sigma": 4.314378034361696,
+     "min": 2.572490808175138,
+     "max": 11.488156662282785,
+     "min_files": [
+      "AX+ SPEC DM1 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 2.572490808175138,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 4,
+     "mean": 11.15686414827401,
+     "sigma": 9.575689307195171,
+     "min": 5.2875483499734415,
+     "max": 25.462052365503446,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 5.2875483499734415,
+     "clipped": false
+    },
+    "DS3": {
+     "n": 3,
+     "mean": 16.244872422329024,
+     "sigma": 4.550743405748897,
+     "min": 11.036484631462926,
+     "max": 19.45221473227943,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 11.036484631462926,
+     "clipped": false
+    }
+   },
+   "242": {
+    "DS1": {
+     "n": 4,
+     "mean": 5.529123662653892,
+     "sigma": 4.918174577612974,
+     "min": 2.721448029452563,
+     "max": 12.873633099257006,
+     "min_files": [
+      "AX+ SPEC DM1 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 2.721448029452563,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 4,
+     "mean": 11.93539872725875,
+     "sigma": 10.765141455780794,
+     "min": 5.236697568286318,
+     "max": 28.00706267375705,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 5.236697568286318,
+     "clipped": false
+    },
+    "DS3": {
+     "n": 3,
+     "mean": 16.515281443806554,
+     "sigma": 4.7009706390735575,
+     "min": 11.138982997509846,
+     "max": 19.85203394453864,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 11.138982997509846,
+     "clipped": false
+    }
+   },
+   "277": {
+    "DS1": {
+     "n": 4,
+     "mean": 5.961075157025418,
+     "sigma": 5.443860776642707,
+     "min": 2.857702425330355,
+     "max": 14.084297855331187,
+     "min_files": [
+      "AX+ SPEC DM1 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 2.857702425330355,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 3,
+     "mean": 7.028128521631911,
+     "sigma": 1.0143162381100594,
+     "min": 6.108378695346626,
+     "max": 8.116002338977326,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 6.108378695346626,
+     "clipped": false
+    },
+    "DS3": {
+     "n": 3,
+     "mean": 17.07780663851251,
+     "sigma": 4.575054373361213,
+     "min": 11.877275348154727,
+     "max": 20.48242186112572,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 11.877275348154727,
+     "clipped": false
+    }
+   },
+   "311": {
+    "DS1": {
+     "n": 4,
+     "mean": 6.644297613865695,
+     "sigma": 5.959526984642366,
+     "min": 2.962565836494732,
+     "max": 15.544808746182108,
+     "min_files": [
+      "AX+ SPEC DM1 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 2.962565836494732,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 3,
+     "mean": 7.424888192780416,
+     "sigma": 0.9613848737646934,
+     "min": 6.68612911606942,
+     "max": 8.51185894167043,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 6.68612911606942,
+     "clipped": false
+    },
+    "DS3": {
+     "n": 3,
+     "mean": 17.42867083277166,
+     "sigma": 4.408869757466119,
+     "min": 12.43712478818889,
+     "max": 20.791325393629247,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 12.43712478818889,
+     "clipped": false
+    }
+   },
+   "360": {
+    "DS1": {
+     "n": 6,
+     "mean": 7.0060429589447395,
+     "sigma": 5.662297168972081,
+     "min": 3.1758874895615734,
+     "max": 18.26019996711433,
+     "min_files": [
+      "AX+ SPEC DM1 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 3.1758874895615734,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 5,
+     "mean": 8.668362926360782,
+     "sigma": 1.7942372459216358,
+     "min": 6.22174560823108,
+     "max": 10.35435870156249,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "value": 6.22174560823108,
+     "clipped": false
+    },
+    "DS3": {
+     "n": 4,
+     "mean": 18.94351066970369,
+     "sigma": 3.8404329058924263,
+     "min": 13.302075538850989,
+     "max": 21.458899919112312,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "value": 13.302075538850989,
+     "clipped": false
+    }
+   },
+   "720": {
+    "DS1": {
+     "n": 5,
+     "mean": 13.028143918028897,
+     "sigma": 7.769392998897407,
+     "min": 5.065599345465941,
+     "max": 21.755840924101747,
+     "min_files": [
+      "AX+ SPEC DM1 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "value": 5.065599345465941,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 3,
+     "mean": 11.341816708799493,
+     "sigma": 3.539904643453657,
+     "min": 8.58266327236707,
+     "max": 15.333141715119313,
+     "min_files": [
+      "SH RU1 vs SREDNJI1_1 Ux - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX+ SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 8.58266327236707,
+     "clipped": false
+    }
+   },
+   "1080": {
+    "DS1": {
+     "n": 6,
+     "mean": 14.075705924210448,
+     "sigma": 4.175684152928196,
+     "min": 7.60275898372993,
+     "max": 19.361035596917972,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 7.60275898372993,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 3,
+     "mean": 16.185723384915843,
+     "sigma": 2.135023195939537,
+     "min": 14.855618689076696,
+     "max": 18.64839642997368,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "max_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 14.855618689076696,
+     "clipped": false
+    }
+   },
+   "1440": {
+    "DS1": {
+     "n": 4,
+     "mean": 5.543017903663183,
+     "sigma": 0.6531343822649829,
+     "min": 4.970226251593538,
+     "max": 6.46372858103979,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 4.970226251593538,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 4,
+     "mean": 9.314603906960286,
+     "sigma": 2.7590835396426336,
+     "min": 6.85393957679752,
+     "max": 11.972465429613631,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 6.85393957679752,
+     "clipped": false
+    },
+    "DS3": {
+     "n": 4,
+     "mean": 12.604879935735289,
+     "sigma": 3.463263045078796,
+     "min": 9.548991744239718,
+     "max": 15.673151286084241,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 9.548991744239718,
+     "clipped": false
+    },
+    "DS4": {
+     "n": 2,
+     "mean": 16.974735533189772,
+     "sigma": 0.031469437182298034,
+     "min": 16.952483280758045,
+     "max": 16.9969877856215,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 16.952483280758045,
+     "clipped": false
+    }
+   },
+   "1800": {
+    "DS1": {
+     "n": 4,
+     "mean": 4.498005698786448,
+     "sigma": 0.16989264833971746,
+     "min": 4.354391577325869,
+     "max": 4.7422159147508,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 4.354391577325869,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 4,
+     "mean": 6.267393546332154,
+     "sigma": 0.9880109632408762,
+     "min": 5.3899776912028186,
+     "max": 7.427002249019039,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 5.3899776912028186,
+     "clipped": false
+    },
+    "DS3": {
+     "n": 2,
+     "mean": 11.53786485410155,
+     "sigma": 0.2568429874039833,
+     "min": 11.356249436007982,
+     "max": 11.719480272195117,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 11.356249436007982,
+     "clipped": false
+    },
+    "DS4": {
+     "n": 2,
+     "mean": 13.123536862699122,
+     "sigma": 0.018240792233404492,
+     "min": 13.110638674816668,
+     "max": 13.136435050581579,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 13.110638674816668,
+     "clipped": false
+    },
+    "DS5": {
+     "n": 2,
+     "mean": 13.687703923393986,
+     "sigma": 0.0012949271009109757,
+     "min": 13.68678827165979,
+     "max": 13.688619575128183,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 13.68678827165979,
+     "clipped": false
+    }
+   },
+   "2160": {
+    "DS1": {
+     "n": 4,
+     "mean": 3.936717478493948,
+     "sigma": 0.07061440616305481,
+     "min": 3.8603558745420403,
+     "max": 4.001193228969952,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "value": 3.8603558745420403,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 2,
+     "mean": 5.490382222164479,
+     "sigma": 0.19327030930818107,
+     "min": 5.353719475850643,
+     "max": 5.627044968478316,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 5.353719475850643,
+     "clipped": false
+    },
+    "DS3": {
+     "n": 2,
+     "mean": 7.76222517295678,
+     "sigma": 0.1293803987877766,
+     "min": 7.670739415621323,
+     "max": 7.8537109302922365,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 7.670739415621323,
+     "clipped": false
+    },
+    "DS4": {
+     "n": 2,
+     "mean": 9.92312660849186,
+     "sigma": 0.022859594189035347,
+     "min": 9.90696243442562,
+     "max": 9.9392907825581,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 9.90696243442562,
+     "clipped": false
+    }
+   },
+   "2520": {
+    "DS1": {
+     "n": 4,
+     "mean": 3.347005163407428,
+     "sigma": 0.158999408536837,
+     "min": 3.190384975701388,
+     "max": 3.5302437930840225,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR KEY TIE"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 3.190384975701388,
+     "clipped": false
+    },
+    "DS2": {
+     "n": 2,
+     "mean": 4.257411323675143,
+     "sigma": 0.10851538751390138,
+     "min": 4.180679357300977,
+     "max": 4.334143290049308,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 4.180679357300977,
+     "clipped": false
+    },
+    "DS3": {
+     "n": 2,
+     "mean": 6.2909587525171204,
+     "sigma": 0.15436363042407106,
+     "min": 6.181807182675686,
+     "max": 6.400110322358556,
+     "min_files": [
+      "AX- SPEC GPL2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "max_files": [
+      "AX- SPEC GM2 vs RU1 Uz - SHEAR NOKEY FR07"
+     ],
+     "value": 6.181807182675686,
+     "clipped": false
+    }
+   }
+  }
+ }
+}

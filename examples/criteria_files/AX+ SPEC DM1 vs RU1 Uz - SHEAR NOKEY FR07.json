@@ -1,0 +1,842 @@
+{
+ "format": "abaqus-section-criteria",
+ "version": 1,
+ "name": "AX+ SPEC DM1 vs RU1 Uz - SHEAR NOKEY FR07",
+ "final": false,
+ "created": "2026-11-02 07:51:27",
+ "modified": "2026-11-10 09:09:18",
+ "units": "mm, kN",
+ "database": "0_INPUT/Abaqus_databases/Panel_results more NOKEY cases",
+ "group": {
+  "name": "SHEAR NOKEY FR07",
+  "filter": "SHEAR_NOKEY_S_FR07"
+ },
+ "mechanism": {
+  "key": "AX+",
+  "name": "AX+ uplift / opening (heel)",
+  "section_a": "V_SPEC&DM&1&0",
+  "section_b": "V_PIER&RU&1&0",
+  "component": "Uz",
+  "sense": "-",
+  "relative_to_start": false,
+  "thresholds": {
+   "DS1": 0.5,
+   "DS2": 1.581,
+   "DS3": 5.0,
+   "DS4": 15.0,
+   "DS5": 20.0
+  },
+  "provisional": [],
+  "locations": [
+   {
+    "label": "RU1 - SPEC GM2 (Uz)",
+    "section_a": "V_SPEC&GM&2&0",
+    "section_b": "V_PIER&RU&1&0",
+    "component": "Uz"
+   },
+   {
+    "label": "RU1 - SPEC GPL2 (Uz)",
+    "section_a": "V_SPEC&GPL&2&0",
+    "section_b": "V_PIER&RU&1&0",
+    "component": "Uz"
+   },
+   {
+    "label": "SPEC DM1 - RU1 (heel, joint)",
+    "section_a": "V_PIER&RU&1&0",
+    "section_b": "V_SPEC&DM&1&0",
+    "component": "Uz"
+   }
+  ],
+  "etabs": {
+   "property_pattern": "^AX|AXIAL",
+   "components": [
+    "U1"
+   ],
+   "sense": "+",
+   "side": "Max",
+   "project_link_types": [
+    "Axial_X_dir",
+    "Axial_Y_dir"
+   ]
+  },
+  "location": "custom"
+ },
+ "pushover": {
+  "drift": "{V_PIER&RU&2&0:Ux} - {V_PIER&RU&1&0:Ux}",
+  "force": "{V_PIER&RU&1&0:Fx} / 1000",
+  "drift_label": "Drift RU2 - RU1 [mm]",
+  "force_label": "Force RU1 Fx [kN]",
+  "H_mm": 2600.0,
+  "collapse_jump_mm": 5.0,
+  "collapse_jump_ratio": 10.0,
+  "collapse_probe": "{V_PIER&RU&2&0:Uz} - {V_PIER&RU&1&0:Uz}"
+ },
+ "defaults_file": "1_Abaqus_criteria/defaults/default_mechanisms.json",
+ "explanation": "Per job: DS1 ... DS5 = drift where the state starts [mm] and the displacement of section B relative to section A at that drift [mm] (the threshold). source: default = default threshold, disp / drift = typed by the user, none = not defined. Damage states are starts: DSk when value > threshold.",
+ "rows": [
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_34272",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 34272,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 34.272,
+   "end_drift": 30.0000887806073,
+   "value_at_zero_drift": -0.00141673042284651
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_68874",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 68874,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": 2.01406988185602,
+     "status": ""
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": 5.550940101262957,
+     "status": ""
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 68.874,
+   "end_drift": 30.000085376028,
+   "value_at_zero_drift": -0.00229818775325441
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_103485",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 103485,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": 2.1665406673458785,
+     "status": ""
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": 5.7702995225543905,
+     "status": ""
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": 16.709904010179486,
+     "status": ""
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 103.485,
+   "end_drift": 29.9999779041227,
+   "value_at_zero_drift": -0.00317004139847654
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_138087",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 138087,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": 2.3126566884396667,
+     "status": ""
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": 6.0282716155693175,
+     "status": ""
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": 17.43854535731723,
+     "status": ""
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 138.087,
+   "end_drift": 29.9999690217826,
+   "value_at_zero_drift": -0.00405306780189107
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_172699",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 172699,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": 2.4332821283554984,
+     "status": ""
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": 6.2637322554363,
+     "status": ""
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": 17.808529657244396,
+     "status": ""
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 172.699,
+   "end_drift": 30.0000855407397,
+   "value_at_zero_drift": -0.0049197923036246
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_207301",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 207301,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": 2.572490808175138,
+     "status": ""
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": 6.484930406309179,
+     "status": ""
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": 18.245917903244713,
+     "status": ""
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 207.301,
+   "end_drift": 30.0003219763921,
+   "value_at_zero_drift": -0.00581593912031053
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_241913",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 241913,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": 2.721448029452563,
+     "status": ""
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": 6.716180646967471,
+     "status": ""
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": 18.554827389371173,
+     "status": ""
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 241.913,
+   "end_drift": 30.0000027722028,
+   "value_at_zero_drift": -0.00667268049063807
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_276515",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 276515,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": 2.857702425330355,
+     "status": ""
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": 6.860004530571779,
+     "status": ""
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": 18.873722706257084,
+     "status": ""
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 276.515,
+   "end_drift": 30.0004003496549,
+   "value_at_zero_drift": -0.00775977734791411
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_311126",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 311126,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": 2.962565836494732,
+     "status": ""
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": 7.0766765206013975,
+     "status": ""
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": 19.057562316496856,
+     "status": ""
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 311.126,
+   "end_drift": 30.0001545733094,
+   "value_at_zero_drift": -0.00854891282602921
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_360000",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 360000,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": 3.1758874895615734,
+     "status": ""
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": 7.442418744239556,
+     "status": ""
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": 19.729449356345846,
+     "status": ""
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 360.0,
+   "end_drift": 20.0005332321703,
+   "value_at_zero_drift": -0.00971282499568815
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_720000",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 720000,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": 5.065599345465941,
+     "status": ""
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": 10.1096451389121,
+     "status": ""
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 720.0,
+   "end_drift": 20.0004602417046,
+   "value_at_zero_drift": -0.0191241690493058
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_1080000",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 1080000,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": 12.146723369966324,
+     "status": ""
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 1080.0,
+   "end_drift": 19.9981585491496,
+   "value_at_zero_drift": -0.0289966082826396
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_1440000",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 1440000,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 1440.0,
+   "end_drift": 17.2009112862997,
+   "value_at_zero_drift": -0.0406065858905293
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_1800000",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 1800000,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 1800.0,
+   "end_drift": 13.9809175480038,
+   "value_at_zero_drift": -0.0516004752260244
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_2160000",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 2160000,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 2160.0,
+   "end_drift": 10.0077787412029,
+   "value_at_zero_drift": -0.0637688909116889
+  },
+  {
+   "job": "SHEAR_NOKEY_S_FR07_EX_2520000",
+   "family": "SHEAR_NOKEY_S_FR07_EX",
+   "axial_N": 2520000,
+   "DS": {
+    "DS1": {
+     "source": "default",
+     "disp": 0.5,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS2": {
+     "source": "default",
+     "disp": 1.581,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS3": {
+     "source": "default",
+     "disp": 5.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS4": {
+     "source": "default",
+     "disp": 15.0,
+     "drift": null,
+     "status": "not reached"
+    },
+    "DS5": {
+     "source": "default",
+     "disp": 20.0,
+     "drift": null,
+     "status": "not reached"
+    }
+   },
+   "note": "",
+   "axial_kN": 2520.0,
+   "end_drift": 7.62478431949989,
+   "value_at_zero_drift": -0.0762535386150915
+  }
+ ],
+ "notes": "",
+ "summary": {
+  "DS1": {
+   "thresholds_mm": 0.5,
+   "start_drift_mm_by_axial_kN": {
+    "34 SHEAR_NOKEY_S_FR07_EX": null,
+    "69 SHEAR_NOKEY_S_FR07_EX": 2.01406988185602,
+    "103 SHEAR_NOKEY_S_FR07_EX": 2.1665406673458785,
+    "138 SHEAR_NOKEY_S_FR07_EX": 2.3126566884396667,
+    "173 SHEAR_NOKEY_S_FR07_EX": 2.4332821283554984,
+    "207 SHEAR_NOKEY_S_FR07_EX": 2.572490808175138,
+    "242 SHEAR_NOKEY_S_FR07_EX": 2.721448029452563,
+    "277 SHEAR_NOKEY_S_FR07_EX": 2.857702425330355,
+    "311 SHEAR_NOKEY_S_FR07_EX": 2.962565836494732,
+    "360 SHEAR_NOKEY_S_FR07_EX": 3.1758874895615734,
+    "720 SHEAR_NOKEY_S_FR07_EX": 5.065599345465941,
+    "1080 SHEAR_NOKEY_S_FR07_EX": 12.146723369966324,
+    "1440 SHEAR_NOKEY_S_FR07_EX": null,
+    "1800 SHEAR_NOKEY_S_FR07_EX": null,
+    "2160 SHEAR_NOKEY_S_FR07_EX": null,
+    "2520 SHEAR_NOKEY_S_FR07_EX": null
+   }
+  },
+  "DS2": {
+   "thresholds_mm": 1.581,
+   "start_drift_mm_by_axial_kN": {
+    "34 SHEAR_NOKEY_S_FR07_EX": null,
+    "69 SHEAR_NOKEY_S_FR07_EX": 5.550940101262957,
+    "103 SHEAR_NOKEY_S_FR07_EX": 5.7702995225543905,
+    "138 SHEAR_NOKEY_S_FR07_EX": 6.0282716155693175,
+    "173 SHEAR_NOKEY_S_FR07_EX": 6.2637322554363,
+    "207 SHEAR_NOKEY_S_FR07_EX": 6.484930406309179,
+    "242 SHEAR_NOKEY_S_FR07_EX": 6.716180646967471,
+    "277 SHEAR_NOKEY_S_FR07_EX": 6.860004530571779,
+    "311 SHEAR_NOKEY_S_FR07_EX": 7.0766765206013975,
+    "360 SHEAR_NOKEY_S_FR07_EX": 7.442418744239556,
+    "720 SHEAR_NOKEY_S_FR07_EX": 10.1096451389121,
+    "1080 SHEAR_NOKEY_S_FR07_EX": null,
+    "1440 SHEAR_NOKEY_S_FR07_EX": null,
+    "1800 SHEAR_NOKEY_S_FR07_EX": null,
+    "2160 SHEAR_NOKEY_S_FR07_EX": null,
+    "2520 SHEAR_NOKEY_S_FR07_EX": null
+   }
+  },
+  "DS3": {
+   "thresholds_mm": 5.0,
+   "start_drift_mm_by_axial_kN": {
+    "34 SHEAR_NOKEY_S_FR07_EX": null,
+    "69 SHEAR_NOKEY_S_FR07_EX": null,
+    "103 SHEAR_NOKEY_S_FR07_EX": 16.709904010179486,
+    "138 SHEAR_NOKEY_S_FR07_EX": 17.43854535731723,
+    "173 SHEAR_NOKEY_S_FR07_EX": 17.808529657244396,
+    "207 SHEAR_NOKEY_S_FR07_EX": 18.245917903244713,
+    "242 SHEAR_NOKEY_S_FR07_EX": 18.554827389371173,
+    "277 SHEAR_NOKEY_S_FR07_EX": 18.873722706257084,
+    "311 SHEAR_NOKEY_S_FR07_EX": 19.057562316496856,
+    "360 SHEAR_NOKEY_S_FR07_EX": 19.729449356345846,
+    "720 SHEAR_NOKEY_S_FR07_EX": null,
+    "1080 SHEAR_NOKEY_S_FR07_EX": null,
+    "1440 SHEAR_NOKEY_S_FR07_EX": null,
+    "1800 SHEAR_NOKEY_S_FR07_EX": null,
+    "2160 SHEAR_NOKEY_S_FR07_EX": null,
+    "2520 SHEAR_NOKEY_S_FR07_EX": null
+   }
+  },
+  "DS4": {
+   "thresholds_mm": 15.0,
+   "start_drift_mm_by_axial_kN": {
+    "34 SHEAR_NOKEY_S_FR07_EX": null,
+    "69 SHEAR_NOKEY_S_FR07_EX": null,
+    "103 SHEAR_NOKEY_S_FR07_EX": null,
+    "138 SHEAR_NOKEY_S_FR07_EX": null,
+    "173 SHEAR_NOKEY_S_FR07_EX": null,
+    "207 SHEAR_NOKEY_S_FR07_EX": null,
+    "242 SHEAR_NOKEY_S_FR07_EX": null,
+    "277 SHEAR_NOKEY_S_FR07_EX": null,
+    "311 SHEAR_NOKEY_S_FR07_EX": null,
+    "360 SHEAR_NOKEY_S_FR07_EX": null,
+    "720 SHEAR_NOKEY_S_FR07_EX": null,
+    "1080 SHEAR_NOKEY_S_FR07_EX": null,
+    "1440 SHEAR_NOKEY_S_FR07_EX": null,
+    "1800 SHEAR_NOKEY_S_FR07_EX": null,
+    "2160 SHEAR_NOKEY_S_FR07_EX": null,
+    "2520 SHEAR_NOKEY_S_FR07_EX": null
+   }
+  },
+  "DS5": {
+   "thresholds_mm": 20.0,
+   "start_drift_mm_by_axial_kN": {
+    "34 SHEAR_NOKEY_S_FR07_EX": null,
+    "69 SHEAR_NOKEY_S_FR07_EX": null,
+    "103 SHEAR_NOKEY_S_FR07_EX": null,
+    "138 SHEAR_NOKEY_S_FR07_EX": null,
+    "173 SHEAR_NOKEY_S_FR07_EX": null,
+    "207 SHEAR_NOKEY_S_FR07_EX": null,
+    "242 SHEAR_NOKEY_S_FR07_EX": null,
+    "277 SHEAR_NOKEY_S_FR07_EX": null,
+    "311 SHEAR_NOKEY_S_FR07_EX": null,
+    "360 SHEAR_NOKEY_S_FR07_EX": null,
+    "720 SHEAR_NOKEY_S_FR07_EX": null,
+    "1080 SHEAR_NOKEY_S_FR07_EX": null,
+    "1440 SHEAR_NOKEY_S_FR07_EX": null,
+    "1800 SHEAR_NOKEY_S_FR07_EX": null,
+    "2160 SHEAR_NOKEY_S_FR07_EX": null,
+    "2520 SHEAR_NOKEY_S_FR07_EX": null
+   }
+  }
+ }
+}
