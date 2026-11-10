@@ -1,0 +1,535 @@
+{
+ "format": "panel-abaqus-reference",
+ "version": 1,
+ "units": "kN, mm",
+ "explanation": "envelopes: horizontal force H [kN] vs vertical force V [kN, compression < 0]. state 'ultimate' = capacity; 'ND' / 'LD' / 'SD' / 'NC' = force at the end of that damage state (fill the points, or let the tool compute them from the Abaqus database + damage-state workbook). ax_curves: AX displacement [mm] vs drift [mm] per axial load [kN].",
+ "envelopes": [
+  {
+   "name": "Abaqus envelope (friction coef 0.6)",
+   "state": "ultimate",
+   "show": true,
+   "points": [
+    [
+     29,
+     -34
+    ],
+    [
+     48,
+     -69
+    ],
+    [
+     60,
+     -103
+    ],
+    [
+     75,
+     -138
+    ],
+    [
+     88.5,
+     -173
+    ],
+    [
+     101,
+     -207
+    ],
+    [
+     115,
+     -242
+    ],
+    [
+     126,
+     -277
+    ],
+    [
+     139,
+     -311
+    ],
+    [
+     156,
+     -360
+    ],
+    [
+     267,
+     -750
+    ],
+    [
+     300,
+     -1080
+    ],
+    [
+     300,
+     -1440
+    ],
+    [
+     270,
+     -1800
+    ],
+    [
+     220,
+     -2160
+    ],
+    [
+     50,
+     -2520
+    ],
+    [
+     -50,
+     -2520
+    ],
+    [
+     -220,
+     -2160
+    ],
+    [
+     -270,
+     -1800
+    ],
+    [
+     -300,
+     -1440
+    ],
+    [
+     -300,
+     -1080
+    ],
+    [
+     -265,
+     -750
+    ],
+    [
+     -158,
+     -360
+    ],
+    [
+     -140,
+     -311
+    ],
+    [
+     -125,
+     -277
+    ],
+    [
+     -115,
+     -242
+    ],
+    [
+     -103,
+     -207
+    ],
+    [
+     -85,
+     -173
+    ],
+    [
+     -72,
+     -138
+    ],
+    [
+     -60,
+     -103
+    ],
+    [
+     -45,
+     -69
+    ],
+    [
+     -28,
+     -34
+    ]
+   ]
+  },
+  {
+   "name": "Abaqus envelope (TIE)",
+   "state": "ultimate",
+   "show": true,
+   "points": [
+    [
+     -90,
+     -34
+    ],
+    [
+     -100,
+     -69
+    ],
+    [
+     -110,
+     -103
+    ],
+    [
+     -120,
+     -138
+    ],
+    [
+     -130,
+     -173
+    ],
+    [
+     -143,
+     -207
+    ],
+    [
+     -155,
+     -242
+    ],
+    [
+     -165,
+     -277
+    ],
+    [
+     -170,
+     -311
+    ],
+    [
+     -180,
+     -360
+    ],
+    [
+     -260,
+     -750
+    ],
+    [
+     -300,
+     -1080
+    ],
+    [
+     -300,
+     -1440
+    ],
+    [
+     -270,
+     -1800
+    ],
+    [
+     -220,
+     -2160
+    ],
+    [
+     -50,
+     -2520
+    ],
+    [
+     50,
+     -2520
+    ],
+    [
+     220,
+     -2160
+    ],
+    [
+     270,
+     -1800
+    ],
+    [
+     300,
+     -1440
+    ],
+    [
+     300,
+     -1080
+    ],
+    [
+     260,
+     -750
+    ],
+    [
+     180,
+     -360
+    ],
+    [
+     170,
+     -311
+    ],
+    [
+     165,
+     -277
+    ],
+    [
+     155,
+     -242
+    ],
+    [
+     143,
+     -207
+    ],
+    [
+     130,
+     -173
+    ],
+    [
+     120,
+     -138
+    ],
+    [
+     110,
+     -103
+    ],
+    [
+     100,
+     -69
+    ],
+    [
+     90,
+     -34
+    ]
+   ]
+  },
+  {
+   "name": "Abaqus ND envelope",
+   "state": "ND",
+   "show": true,
+   "points": []
+  },
+  {
+   "name": "Abaqus LD envelope",
+   "state": "LD",
+   "show": true,
+   "points": []
+  },
+  {
+   "name": "Abaqus SD envelope",
+   "state": "SD",
+   "show": true,
+   "points": []
+  },
+  {
+   "name": "Abaqus NC envelope",
+   "state": "NC",
+   "show": true,
+   "points": []
+  }
+ ],
+ "ax_curves": {
+  "Tension (FR06 vlak)": {
+   "quantity": "ax_uplift",
+   "drift_mm": [
+    0,
+    2.5,
+    5,
+    7.5,
+    10,
+    12.5,
+    15,
+    17.5,
+    20
+   ],
+   "curves": {
+    "34": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "173": [
+     -0.12,
+     0.26,
+     0.96,
+     1.71,
+     2.42,
+     3.14,
+     3.89,
+     4.6,
+     5.3
+    ],
+    "360": [
+     -0.33,
+     -0.1,
+     0.44,
+     1.0,
+     1.65,
+     2.27,
+     2.95,
+     3.54,
+     4.2
+    ],
+    "720": [
+     -0.72,
+     -0.87,
+     -0.65,
+     -0.3,
+     0,
+     0.55,
+     1.0,
+     1.7,
+     2.2
+    ],
+    "1080": [
+     -1.4,
+     -1.71,
+     -1.9,
+     -2.1,
+     -2.2,
+     -2.1,
+     -2.3,
+     null,
+     null
+    ]
+   }
+  },
+  "Compression (FR05 tlak)": {
+   "quantity": "ax_crush",
+   "drift_mm": [
+    0,
+    2.5,
+    5,
+    7.5,
+    10,
+    12.5,
+    15,
+    17.5,
+    20
+   ],
+   "curves": {
+    "34": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "173": [
+     -0.13,
+     0,
+     0.11,
+     0.26,
+     0.45,
+     0.65,
+     0.84,
+     1.04,
+     1.27
+    ],
+    "360": [
+     -0.34,
+     -0.34,
+     -0.34,
+     -0.26,
+     -0.15,
+     0,
+     0.13,
+     0.28,
+     0.45
+    ],
+    "720": [
+     -0.7,
+     -1.0,
+     -1.1,
+     -1.2,
+     -1.23,
+     -1.23,
+     -1.2,
+     -1.2,
+     -1.2
+    ],
+    "1080": [
+     -1.41,
+     -1.75,
+     -2.1,
+     -2.42,
+     -2.55,
+     -2.68,
+     -3.0,
+     null,
+     null
+    ]
+   }
+  },
+  "TIE (vlak & tlak)": {
+   "quantity": "ax_uplift",
+   "drift_mm": [
+    0,
+    2.5,
+    5,
+    7.5,
+    10,
+    12.5,
+    15,
+    17.5,
+    20
+   ],
+   "curves": {
+    "34": [
+     0,
+     0.5,
+     1.35,
+     2.21,
+     3.15,
+     4.02,
+     5.0,
+     6.0,
+     6.8
+    ],
+    "173": [
+     -0.13,
+     0.17,
+     0.81,
+     1.56,
+     2.4,
+     3.3,
+     4.1,
+     5.1,
+     6.0
+    ],
+    "360": [
+     -0.34,
+     -0.25,
+     0.2,
+     0.85,
+     1.5,
+     2.2,
+     2.9,
+     3.8,
+     4.55
+    ],
+    "720": [
+     -0.7,
+     -1.0,
+     -1.0,
+     -0.8,
+     -0.75,
+     -0.45,
+     -0.14,
+     0.14,
+     0.46
+    ],
+    "1080": [
+     -1.41,
+     -1.75,
+     -2.1,
+     -2.42,
+     -2.42,
+     -2.5,
+     -3.0,
+     null,
+     null
+    ]
+   }
+  }
+ },
+ "abaqus": {
+  "database": "../0_INPUT/Abaqus_databases/Panel_results same cases as ETABS",
+  "family": "SHEAR_KEY_S_TIE_EX",
+  "ds_workbook": "../_previous_tools/Old copy of the plotter tools (from the ETABS folder)/Claude excell acceptance criteria/Damage_states_extracted_example.xlsx",
+  "ds_family": "SHEAR_KEY_S_TIE_EX",
+  "axial_tolerance": 0.03,
+  "expressions": {
+   "drift": "{V_PIER&RU&2&0:Ux} - {V_PIER&RU&1&0:Ux}",
+   "H": "{V_PIER&RU&1&0:Fx} / 1000",
+   "V": "-{V_PIER&RU&1&0:Fz} / 1000",
+   "ax_uplift": "{V_SPEC&DM&1&0:Uz} - {V_PIER&RU&1&0:Uz}",
+   "ax_crush": "{V_SPEC&DPL&2&0:Uz} - {V_SPEC&DPL&1&0:Uz}",
+   "sh_slide": "{V_PIER&SREDNJI1&1&0:Ux} - {V_PIER&RU&1&0:Ux}",
+   "node_uplift": "{V_PIER&RU&2&0:Uz} - {V_PIER&RU&1&0:Uz}",
+   "node_crush": "{V_PIER&RU&2&0:Uz} - {V_PIER&RU&1&0:Uz}"
+  },
+  "note": "Abaqus quantity matched to each ETABS quantity (mm, kN), {SET:COLUMN} as in the plotter GUIs. Uplift = opening at the heel joint (DM1 - RU1), crushing = shortening of the toe slice (DPL2 - DPL1), sliding = panel bottom vs base (SREDNJI1 - RU1), node uplift / crushing = vertical displacement of the loading point (RU2 - RU1). Change them if another mapping fits better."
+ }
+}

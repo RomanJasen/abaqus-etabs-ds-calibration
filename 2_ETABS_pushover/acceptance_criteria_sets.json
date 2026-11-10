@@ -1,0 +1,358 @@
+{
+  "format": "panel-acceptance-criteria",
+  "version": 1,
+  "units": "mm",
+  "explanation": "Limits are upper bounds of each damage state: value < ND -> ND, < LD -> LD, < SD -> SD, otherwise NC; NC = end of NC (empty = to the end of the analysis). sense '+' = positive values are damage (opening), '-' = negative values (closing), 'abs' = both. relative_to_start: subtract the value at step 0 (state after the axial load).",
+  "sets": {
+    "Excel - used in the DS columns (AR..AY)": {
+      "note": "Limits of row 3 of the sheet (used by the DS formulas)",
+      "checks": [
+        {
+          "name": "AX uplift (K3, bottom heel)",
+          "quantity": "ax_uplift",
+          "sense": "+",
+          "relative_to_start": false,
+          "use_for_DS": true,
+          "limits": {
+            "ND": 0.31546,
+            "LD": 1.57729,
+            "SD": 6.30916,
+            "NC": 15.7729
+          }
+        },
+        {
+          "name": "AX crushing (K1, bottom toe)",
+          "quantity": "ax_crush",
+          "sense": "-",
+          "relative_to_start": false,
+          "use_for_DS": true,
+          "limits": {
+            "ND": 1.0,
+            "LD": 2.0,
+            "SD": 3.0,
+            "NC": 4.6
+          }
+        },
+        {
+          "name": "SH sliding (K2/K4, bottom)",
+          "quantity": "sh_slide",
+          "sense": "abs",
+          "relative_to_start": false,
+          "use_for_DS": true,
+          "limits": {
+            "ND": 0.01,
+            "LD": 0.5,
+            "SD": 3.0,
+            "NC": null
+          }
+        },
+        {
+          "name": "Node uplift (1198 - 1199)",
+          "quantity": "node_uplift",
+          "sense": "+",
+          "relative_to_start": false,
+          "use_for_DS": false,
+          "limits": {
+            "ND": 0.5,
+            "LD": 5.0,
+            "SD": 15.0,
+            "NC": null
+          }
+        },
+        {
+          "name": "Node crushing (1196 - 1201)",
+          "quantity": "node_crush",
+          "sense": "-",
+          "relative_to_start": false,
+          "use_for_DS": false,
+          "limits": {
+            "ND": 1.0,
+            "LD": 2.0,
+            "SD": 3.0,
+            "NC": 4.6
+          }
+        }
+      ]
+    },
+    "Excel - read from Abaqus": {
+      "note": "'Granice ocitane iz abaqusa'",
+      "checks": [
+        {
+          "name": "AX uplift (K3, bottom heel)",
+          "quantity": "ax_uplift",
+          "sense": "+",
+          "relative_to_start": false,
+          "use_for_DS": true,
+          "limits": {
+            "ND": 0.1,
+            "LD": 0.5,
+            "SD": 2.0,
+            "NC": 5.0
+          }
+        },
+        {
+          "name": "AX crushing (K1, bottom toe)",
+          "quantity": "ax_crush",
+          "sense": "-",
+          "relative_to_start": false,
+          "use_for_DS": true,
+          "limits": {
+            "ND": 1.0,
+            "LD": 2.0,
+            "SD": 3.0,
+            "NC": 4.6
+          }
+        },
+        {
+          "name": "SH sliding (K2/K4, bottom)",
+          "quantity": "sh_slide",
+          "sense": "abs",
+          "relative_to_start": false,
+          "use_for_DS": true,
+          "limits": {
+            "ND": 0.01,
+            "LD": 0.5,
+            "SD": 3.0,
+            "NC": null
+          }
+        },
+        {
+          "name": "Node uplift (1198 - 1199)",
+          "quantity": "node_uplift",
+          "sense": "+",
+          "relative_to_start": false,
+          "use_for_DS": false,
+          "limits": {
+            "ND": 0.5,
+            "LD": 5.0,
+            "SD": 15.0,
+            "NC": null
+          }
+        },
+        {
+          "name": "Node crushing (1196 - 1201)",
+          "quantity": "node_crush",
+          "sense": "-",
+          "relative_to_start": false,
+          "use_for_DS": false,
+          "limits": {
+            "ND": 1.0,
+            "LD": 2.0,
+            "SD": 3.0,
+            "NC": 4.6
+          }
+        }
+      ]
+    },
+    "Excel - Abaqus with MAX crack correction": {
+      "note": "'... ALI sa korekcijom MAX dimenzije pukotine za vlak'",
+      "checks": [
+        {
+          "name": "AX uplift (K3, bottom heel)",
+          "quantity": "ax_uplift",
+          "sense": "+",
+          "relative_to_start": false,
+          "use_for_DS": true,
+          "limits": {
+            "ND": 0.2,
+            "LD": 1.37,
+            "SD": 3.3,
+            "NC": 5.5
+          }
+        },
+        {
+          "name": "AX crushing (K1, bottom toe)",
+          "quantity": "ax_crush",
+          "sense": "-",
+          "relative_to_start": false,
+          "use_for_DS": true,
+          "limits": {
+            "ND": 1.0,
+            "LD": 2.0,
+            "SD": 3.0,
+            "NC": 4.6
+          }
+        },
+        {
+          "name": "SH sliding (K2/K4, bottom)",
+          "quantity": "sh_slide",
+          "sense": "abs",
+          "relative_to_start": false,
+          "use_for_DS": true,
+          "limits": {
+            "ND": 0.01,
+            "LD": 0.5,
+            "SD": 3.0,
+            "NC": null
+          }
+        },
+        {
+          "name": "Node uplift (1198 - 1199)",
+          "quantity": "node_uplift",
+          "sense": "+",
+          "relative_to_start": false,
+          "use_for_DS": false,
+          "limits": {
+            "ND": 0.5,
+            "LD": 5.0,
+            "SD": 15.0,
+            "NC": null
+          }
+        },
+        {
+          "name": "Node crushing (1196 - 1201)",
+          "quantity": "node_crush",
+          "sense": "-",
+          "relative_to_start": false,
+          "use_for_DS": false,
+          "limits": {
+            "ND": 1.0,
+            "LD": 2.0,
+            "SD": 3.0,
+            "NC": 4.6
+          }
+        }
+      ]
+    },
+    "Excel - tension x2 (MAX / residual crack)": {
+      "note": "'Korekcija vlaka jos za faktor MAX i res pukotina, uzeto konzervativno 2x'",
+      "checks": [
+        {
+          "name": "AX uplift (K3, bottom heel)",
+          "quantity": "ax_uplift",
+          "sense": "+",
+          "relative_to_start": false,
+          "use_for_DS": true,
+          "limits": {
+            "ND": 0.2,
+            "LD": 1.0,
+            "SD": 4.0,
+            "NC": 10.0
+          }
+        },
+        {
+          "name": "AX crushing (K1, bottom toe)",
+          "quantity": "ax_crush",
+          "sense": "-",
+          "relative_to_start": false,
+          "use_for_DS": true,
+          "limits": {
+            "ND": 1.0,
+            "LD": 2.0,
+            "SD": 3.0,
+            "NC": 4.6
+          }
+        },
+        {
+          "name": "SH sliding (K2/K4, bottom)",
+          "quantity": "sh_slide",
+          "sense": "abs",
+          "relative_to_start": false,
+          "use_for_DS": true,
+          "limits": {
+            "ND": 0.01,
+            "LD": 0.5,
+            "SD": 3.0,
+            "NC": null
+          }
+        },
+        {
+          "name": "Node uplift (1198 - 1199)",
+          "quantity": "node_uplift",
+          "sense": "+",
+          "relative_to_start": false,
+          "use_for_DS": false,
+          "limits": {
+            "ND": 0.5,
+            "LD": 5.0,
+            "SD": 15.0,
+            "NC": null
+          }
+        },
+        {
+          "name": "Node crushing (1196 - 1201)",
+          "quantity": "node_crush",
+          "sense": "-",
+          "relative_to_start": false,
+          "use_for_DS": false,
+          "limits": {
+            "ND": 1.0,
+            "LD": 2.0,
+            "SD": 3.0,
+            "NC": 4.6
+          }
+        }
+      ]
+    },
+    "Excel - tension x5": {
+      "note": "'Skaliranje za MAX/residual pukotine, scale factor 5'",
+      "checks": [
+        {
+          "name": "AX uplift (K3, bottom heel)",
+          "quantity": "ax_uplift",
+          "sense": "+",
+          "relative_to_start": false,
+          "use_for_DS": true,
+          "limits": {
+            "ND": 0.5,
+            "LD": 2.5,
+            "SD": 10.0,
+            "NC": 25.0
+          }
+        },
+        {
+          "name": "AX crushing (K1, bottom toe)",
+          "quantity": "ax_crush",
+          "sense": "-",
+          "relative_to_start": false,
+          "use_for_DS": true,
+          "limits": {
+            "ND": 1.0,
+            "LD": 2.0,
+            "SD": 3.0,
+            "NC": 4.6
+          }
+        },
+        {
+          "name": "SH sliding (K2/K4, bottom)",
+          "quantity": "sh_slide",
+          "sense": "abs",
+          "relative_to_start": false,
+          "use_for_DS": true,
+          "limits": {
+            "ND": 0.01,
+            "LD": 0.5,
+            "SD": 3.0,
+            "NC": null
+          }
+        },
+        {
+          "name": "Node uplift (1198 - 1199)",
+          "quantity": "node_uplift",
+          "sense": "+",
+          "relative_to_start": false,
+          "use_for_DS": false,
+          "limits": {
+            "ND": 0.5,
+            "LD": 5.0,
+            "SD": 15.0,
+            "NC": null
+          }
+        },
+        {
+          "name": "Node crushing (1196 - 1201)",
+          "quantity": "node_crush",
+          "sense": "-",
+          "relative_to_start": false,
+          "use_for_DS": false,
+          "limits": {
+            "ND": 1.0,
+            "LD": 2.0,
+            "SD": 3.0,
+            "NC": 4.6
+          }
+        }
+      ]
+    }
+  }
+}

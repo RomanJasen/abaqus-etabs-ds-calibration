@@ -1,0 +1,184 @@
+{
+  "format": "panel-pushover-settings",
+  "version": 1,
+  "etabs_instance": "AX_API_attempt",
+  "case": "PSH_test_DIN_sila",
+  "vertical_pattern": "G",
+  "vertical_nodes": [
+    "1198",
+    "1196"
+  ],
+  "vertical_shares": [
+    0.5,
+    0.5
+  ],
+  "horizontal_pattern": "HOR_sila",
+  "control_node": "1198",
+  "control_dof": "U2",
+  "disp_min": 0.1,
+  "disp_max": 0.3,
+  "auto_adjust": true,
+  "max_attempts": 8,
+  "factor_down": 0.75,
+  "factor_up": 1.4,
+  "run_only_needed_cases": true,
+  "restore_run_flags": true,
+  "cancel_stalled": true,
+  "stall_minutes": 2.0,
+  "stall_min_progress_s": 0.1,
+  "max_analysis_minutes": 30.0,
+  "stall_overshoot": 0.03,
+  "solution_scheme": "",
+  "fallback_schemes": [
+    "Iterative Events",
+    "Events Only"
+  ],
+  "fallback_on_stall": true,
+  "jump_mm": 5.0,
+  "jump_ratio": 10.0,
+  "vertical_tolerance": 0.1,
+  "levels": [
+    {
+      "scheme": "",
+      "run": true,
+      "axial_kN": 34.272,
+      "scale_factor": 40
+    },
+    {
+      "scheme": "",
+      "run": true,
+      "axial_kN": 68.874,
+      "scale_factor": 40
+    },
+    {
+      "scheme": "",
+      "run": true,
+      "axial_kN": 172.699,
+      "scale_factor": 40
+    },
+    {
+      "scheme": "",
+      "run": true,
+      "axial_kN": 360,
+      "scale_factor": 90
+    },
+    {
+      "scheme": "",
+      "run": true,
+      "axial_kN": 720,
+      "scale_factor": 160
+    },
+    {
+      "scheme": "",
+      "run": true,
+      "axial_kN": 1080,
+      "scale_factor": 200
+    },
+    {
+      "scheme": "",
+      "run": true,
+      "axial_kN": 1440,
+      "scale_factor": 290
+    },
+    {
+      "scheme": "",
+      "run": true,
+      "axial_kN": 1800,
+      "scale_factor": 330
+    }
+  ],
+  "runs_folder": "ETABS_results",
+  "run_name": "",
+  "quantities": [
+    {
+      "key": "drift",
+      "name": "Drift (average of nodes 1198 / 1196)",
+      "expr": "({J1198:U2} + {J1196:U2}) / 2",
+      "kind": "disp"
+    },
+    {
+      "key": "drift_1198",
+      "name": "Horizontal displacement node 1198",
+      "expr": "{J1198:U2}",
+      "kind": "disp"
+    },
+    {
+      "key": "H",
+      "name": "Horizontal force, bottom shear links (K2 + K4 V3)",
+      "expr": "{K2:V3} + {K4:V3}",
+      "kind": "force"
+    },
+    {
+      "key": "V",
+      "name": "Vertical force, bottom links (K2 + K4 P, compression < 0)",
+      "expr": "{K2:P} + {K4:P}",
+      "kind": "force"
+    },
+    {
+      "key": "H_top",
+      "name": "Horizontal force, top shear links (K5 + K7 V3)",
+      "expr": "{K5:V3} + {K7:V3}",
+      "kind": "force"
+    },
+    {
+      "key": "V_top",
+      "name": "Vertical force, top links (K5 + K7 P)",
+      "expr": "{K5:P} + {K7:P}",
+      "kind": "force"
+    },
+    {
+      "key": "ax_uplift",
+      "name": "AX link uplift, bottom heel (K3 U1)",
+      "expr": "{K3:U1}",
+      "kind": "disp"
+    },
+    {
+      "key": "ax_crush",
+      "name": "AX link crushing, bottom toe (K1 U1)",
+      "expr": "{K1:U1}",
+      "kind": "disp"
+    },
+    {
+      "key": "ax_top_K8",
+      "name": "AX link top K8 U1 (mirror of K3)",
+      "expr": "{K8:U1}",
+      "kind": "disp"
+    },
+    {
+      "key": "ax_top_K6",
+      "name": "AX link top K6 U1 (mirror of K1)",
+      "expr": "{K6:U1}",
+      "kind": "disp"
+    },
+    {
+      "key": "sh_slide",
+      "name": "SH link sliding, bottom (average K2 / K4 U3)",
+      "expr": "({K2:U3} + {K4:U3}) / 2",
+      "kind": "disp"
+    },
+    {
+      "key": "sh_slide_top",
+      "name": "SH link sliding, top (average K5 / K7 U3)",
+      "expr": "({K5:U3} + {K7:U3}) / 2",
+      "kind": "disp"
+    },
+    {
+      "key": "node_uplift",
+      "name": "Uplift, Uz node 1198 - node 1199",
+      "expr": "{J1198:U3} - {J1199:U3}",
+      "kind": "disp"
+    },
+    {
+      "key": "node_crush",
+      "name": "Crushing, Uz node 1196 - node 1201",
+      "expr": "{J1196:U3} - {J1201:U3}",
+      "kind": "disp"
+    }
+  ],
+  "report_run": "Run 1 - all axial forces",
+  "criteria_set": "Excel - read from Abaqus",
+  "panel_height_mm": 2720.0,
+  "running_damage": true,
+  "drift_plot_max_mm": null,
+  "abaqus_compare": true
+}
