@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+*.tmp
+
+# settings of the windows (saved on close, per computer)
+gui_settings.json
+
+# input and results: not in the repository
+0_INPUT/
+2_ETABS_pushover/ETABS_results/
+1_Abaqus_criteria/criteria_files/
+3_ETABS_calibration/etabs_criteria/
+_docs/
+_previous_tools/
+The ETABS pushover set of scripts/
