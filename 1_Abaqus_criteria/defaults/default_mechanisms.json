@@ -1,0 +1,300 @@
+{
+ "format": "dscal-defaults",
+ "version": 1,
+ "note": "Default mechanisms (section pairs, component, sense) and initial thresholds [mm] of the damage-state calibration. Thresholds are STARTS of DS1 ... DS5 (null = not defined). Source of the thresholds: HANDOVER_element_damage_states_DS0-5.md, section 4: the values of the project's acceptance_criteria.json (DS1 / DS3 / DS4 = MK4, AX- DS5 = calibration, DS2 = provisional sqrt(DS1 x DS3))",
+ "pushover": {
+  "drift": "{V_PIER&RU&2&0:Ux} - {V_PIER&RU&1&0:Ux}",
+  "force": "{V_PIER&RU&1&0:Fx} / 1000",
+  "drift_label": "Drift RU2 - RU1 [mm]",
+  "force_label": "Force RU1 Fx [kN]",
+  "H_mm": 2600.0,
+  "collapse_jump_mm": 5.0,
+  "collapse_jump_ratio": 10.0,
+  "collapse_probe": "{V_PIER&RU&2&0:Uz} - {V_PIER&RU&1&0:Uz}"
+ },
+ "mechanisms": [
+  {
+   "key": "AX+",
+   "name": "AX+ uplift / opening (heel)",
+   "section_a": "V_SPEC&GM&2&0",
+   "section_b": "V_PIER&RU&1&0",
+   "component": "Uz",
+   "sense": "-",
+   "relative_to_start": false,
+   "thresholds": {
+    "DS1": 0.5,
+    "DS2": 1.581,
+    "DS3": 5.0,
+    "DS4": 15.0,
+    "DS5": 20.0
+   },
+   "provisional": [],
+   "locations": [
+    {
+     "label": "RU1 - SPEC GM2 (Uz)",
+     "section_a": "V_SPEC&GM&2&0",
+     "section_b": "V_PIER&RU&1&0",
+     "component": "Uz"
+    },
+    {
+     "label": "RU1 - SPEC GPL2 (Uz)",
+     "section_a": "V_SPEC&GPL&2&0",
+     "section_b": "V_PIER&RU&1&0",
+     "component": "Uz"
+    },
+    {
+     "label": "SPEC DM1 - RU1 (heel, joint)",
+     "section_a": "V_PIER&RU&1&0",
+     "section_b": "V_SPEC&DM&1&0",
+     "component": "Uz"
+    }
+   ],
+   "etabs": {
+    "property_pattern": "^AX|AXIAL",
+    "components": [
+     "U1"
+    ],
+    "sense": "+",
+    "side": "Max",
+    "project_link_types": [
+     "Axial_X_dir",
+     "Axial_Y_dir"
+    ]
+   }
+  },
+  {
+   "key": "AX-",
+   "name": "AX- crushing / compression (toe)",
+   "section_a": "V_SPEC&GPL&2&0",
+   "section_b": "V_PIER&RU&1&0",
+   "component": "Uz",
+   "sense": "-",
+   "relative_to_start": true,
+   "thresholds": {
+    "DS1": -1.0,
+    "DS2": -1.414,
+    "DS3": -2.0,
+    "DS4": -3.0,
+    "DS5": -4.6
+   },
+   "provisional": [
+    "DS1",
+    "DS2",
+    "DS3",
+    "DS4",
+    "DS5"
+   ],
+   "locations": [
+    {
+     "label": "RU1 - SPEC GPL2 (Uz)",
+     "section_a": "V_SPEC&GPL&2&0",
+     "section_b": "V_PIER&RU&1&0",
+     "component": "Uz"
+    },
+    {
+     "label": "SPEC GPL2 - RU1 (toe, panel top)",
+     "section_a": "V_PIER&RU&1&0",
+     "section_b": "V_SPEC&GPL&2&0",
+     "component": "Uz"
+    },
+    {
+     "label": "SPEC GM2 - RU1 (heel, panel top)",
+     "section_a": "V_PIER&RU&1&0",
+     "section_b": "V_SPEC&GM&2&0",
+     "component": "Uz"
+    },
+    {
+     "label": "SPEC DPL2 - RU1 (toe, bottom slice)",
+     "section_a": "V_PIER&RU&1&0",
+     "section_b": "V_SPEC&DPL&2&0",
+     "component": "Uz"
+    }
+   ],
+   "etabs": {
+    "property_pattern": "^AX|AXIAL",
+    "components": [
+     "U1"
+    ],
+    "sense": "-",
+    "side": "Min",
+    "project_link_types": [
+     "Axial_X_dir",
+     "Axial_Y_dir"
+    ]
+   }
+  },
+  {
+   "key": "SH",
+   "name": "SH sliding (panel bottom vs base)",
+   "section_a": "V_PIER&RU&1&0",
+   "section_b": "V_PIER&SREDNJI1&1&0",
+   "component": "Ux",
+   "sense": "abs",
+   "relative_to_start": false,
+   "thresholds": {
+    "DS1": 0.1,
+    "DS2": 0.2,
+    "DS3": 0.5,
+    "DS4": 3.0,
+    "DS5": null
+   },
+   "provisional": [],
+   "locations": [
+    {
+     "label": "SREDNJI1 - RU1 (panel bottom face)",
+     "section_a": "V_PIER&RU&1&0",
+     "section_b": "V_PIER&SREDNJI1&1&0",
+     "component": "Ux"
+    }
+   ],
+   "etabs": {
+    "property_pattern": "^(?!.*KEY).*SHEAR",
+    "components": [
+     "U3"
+    ],
+    "sense": "abs",
+    "side": "Min=Max",
+    "project_link_types": [
+     "Shear_X_dir",
+     "Shear_Y_dir"
+    ]
+   }
+  },
+  {
+   "key": "REB",
+   "name": "REB vertical bars",
+   "section_a": "V_SPEC&DM&1&0",
+   "section_b": "V_PIER&RU&1&0",
+   "component": "Uz",
+   "sense": "-",
+   "relative_to_start": false,
+   "thresholds": {
+    "DS1": 0.12,
+    "DS2": 1.0,
+    "DS3": 2.4,
+    "DS4": 12.0,
+    "DS5": 15.0
+   },
+   "provisional": [],
+   "locations": [
+    {
+     "label": "RU1 - SPEC DM1 (Uz)",
+     "section_a": "V_SPEC&DM&1&0",
+     "section_b": "V_PIER&RU&1&0",
+     "component": "Uz"
+    },
+    {
+     "label": "SPEC DM2 - RU1 (heel, bottom slice)",
+     "section_a": "V_PIER&RU&1&0",
+     "section_b": "V_SPEC&DM&2&0",
+     "component": "Uz"
+    },
+    {
+     "label": "SPEC DPL2 - RU1 (toe, bottom slice)",
+     "section_a": "V_PIER&RU&1&0",
+     "section_b": "V_SPEC&DPL&2&0",
+     "component": "Uz"
+    }
+   ],
+   "etabs": {
+    "property_pattern": "REB|ARM",
+    "components": [
+     "U1",
+     "U3"
+    ],
+    "sense": "abs",
+    "side": "Min=Max",
+    "project_link_types": [
+     "Armatura_X",
+     "Armatura_Y"
+    ]
+   }
+  }
+ ],
+ "groups": [
+  {
+   "name": "SHEAR KEY TIE",
+   "filter": "SHEAR_KEY_S_TIE"
+  },
+  {
+   "name": "SHEAR KEY FR05",
+   "filter": "SHEAR_KEY_S_FR05"
+  },
+  {
+   "name": "SHEAR NOKEY FR07",
+   "filter": "SHEAR_NOKEY_S_FR07"
+  },
+  {
+   "name": "BEND KEY TIE",
+   "filter": "BEND_KEY_S_TIE"
+  },
+  {
+   "name": "BEND KEY FR05",
+   "filter": "BEND_KEY_S_FR05"
+  },
+  {
+   "name": "BEND NOKEY FR07",
+   "filter": "BEND_NOKEY_S_FR07"
+  },
+  {
+   "name": "all SHEAR",
+   "filter": "SHEAR_"
+  },
+  {
+   "name": "all NOKEY",
+   "filter": "NOKEY"
+  },
+  {
+   "name": "all TIE",
+   "filter": "TIE"
+  }
+ ],
+ "top_chart": {
+  "auto": true,
+  "preset": "SHEAR: drift vs base force Fx",
+  "presets": [
+   {
+    "name": "SHEAR: drift vs base force Fx",
+    "match": "SHEAR",
+    "x": {
+     "section_1": "V_PIER&RU&2&0",
+     "section_2": "V_PIER&RU&1&0",
+     "column": "Ux",
+     "factor": 1.0,
+     "label": "Drift RU2 - RU1 [mm]"
+    },
+    "y": {
+     "section_1": "V_PIER&RU&1&0",
+     "section_2": "",
+     "column": "Fx",
+     "factor": 0.001,
+     "label": "Force RU1 Fx [kN]"
+    }
+   },
+   {
+    "name": "BEND: rotation fiy vs base moment My",
+    "match": "BEND",
+    "x": {
+     "section_1": "V_PIER&RU&2&0",
+     "section_2": "V_PIER&RU&1&0",
+     "column": "fiy",
+     "factor": 1000.0,
+     "label": "Rotation RU2 - RU1 fiy [mrad]"
+    },
+    "y": {
+     "section_1": "V_PIER&RU&1&0",
+     "section_2": "",
+     "column": "My",
+     "factor": 1e-06,
+     "label": "Moment RU1 My [kNm]"
+    }
+   }
+  ]
+ },
+ "mechanism_colors": {
+  "AX+": "#7030A0",
+  "AX-": "#C55A11",
+  "SH": "#008080",
+  "REB": "#E000E0"
+ }
+}
